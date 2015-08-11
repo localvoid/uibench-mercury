@@ -9,11 +9,11 @@ function renderMain(data) {
 
   var section;
   if (location === 'table') {
-    section = hg.partial(renderTable, {data: data.table});
+    section = hg.partial(renderTable, data.table);
   } else if (location === 'anim') {
-    section = hg.partial(renderAnim, {data: data.anim});
+    section = hg.partial(renderAnim, data.anim);
   } else if (location === 'tree') {
-    section = hg.partial(renderTree, {data: data.tree});
+    section = hg.partial(renderTree, data.tree);
   }
 
   return h('div.Main', section);

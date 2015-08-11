@@ -1,8 +1,7 @@
 var hg = require('mercury');
 var h = hg.h;
 
-function renderAnimBox(props) {
-  var data = props.data;
+function renderAnimBox(data) {
   var time = data.time;
   var style = {
     'borderRadius': (time % 10).toString() + 'px',
@@ -12,13 +11,13 @@ function renderAnimBox(props) {
   return h('div.AnimBox', {'data-id': data.id, style: style});
 }
 
-function renderAnim(props) {
-  var items = props.data.items;
+function renderAnim(data) {
+  var items = data.items;
 
   var children = [];
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
-    children.push(hg.partial(renderAnimBox, {key: item.id, data: item}));
+    children.push(hg.partial(renderAnimBox, item));
   }
 
   return h('div.Anim', children);
