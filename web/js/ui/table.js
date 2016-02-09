@@ -6,7 +6,7 @@ function renderTableCell(text) {
     console.log('Clicked' + text);
     e.stopPropagation();
   }
-  return h('td.TableCell', {'ev-click': onClick}, text);
+  return h('td.TableCell', {'onclick': onClick}, text);
 }
 
 function renderTableRow(data) {
@@ -21,7 +21,7 @@ function renderTableRow(data) {
     children.push(hg.partial(renderTableCell, cells[i]));
   }
 
-  return h('tr', {'className': classes, 'data-id': data.id}, children);
+  return h('tr', {'className': classes, 'attributes': {'data-id': data.id}}, children);
 
 }
 

@@ -8,7 +8,7 @@ function renderAnimBox(data) {
     'background': 'rgba(0,0,0,' + (0.5 + ((time % 10) /10)).toString() + ')'
   };
 
-  return h('div.AnimBox', {'data-id': data.id, style: style});
+  return h('div.AnimBox', {style: style, 'attributes': {'data-id': data.id}});
 }
 
 function renderAnim(data) {
