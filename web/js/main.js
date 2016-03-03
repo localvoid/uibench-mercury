@@ -5,7 +5,7 @@ var diff = hg.diff;
 var patch = hg.patch;
 var renderMain = require('./ui/main');
 
-uibench.init('Mercury', '14.0.0');
+uibench.init('Mercury', '14.1.0');
 
 document.addEventListener('DOMContentLoaded', function(e) {
   var container = document.querySelector('#App');
